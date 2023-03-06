@@ -1,0 +1,12 @@
+.character-list {
+}
+
+.title {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.list-container {
+  display: flex;
+  gap: 20px;
+}

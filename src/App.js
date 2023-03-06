@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import CharacterList from "./components/CharacterList";
+import AddNewCharacter from "./components/AddNewCharacter";
+
+import "./App.css";
 
 function App() {
+  const characters = [
+    {
+      id: 1,
+      firstName: "Rick",
+      lastName: "Sanchez",
+      age: "?",
+    },
+    {
+      id: 1,
+      firstName: "Morty",
+      lastName: "Smith",
+      age: "13",
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddNewCharacter />
+      <CharacterList characters={characters} />
     </div>
   );
 }
