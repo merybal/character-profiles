@@ -1,6 +1,5 @@
-// import logo from './logo.svg';
 import CharacterList from "./components/CharacterList";
-import AddNewCharacter from "./components/AddNewCharacter";
+import NewCharacter from "./components/NewCharacter";
 
 import "./App.css";
 
@@ -20,9 +19,13 @@ function App() {
     },
   ];
 
+  const addCharacterHandler = (character) => {
+    console.log("app", character);
+  };
+
   return (
     <div className="App">
-      <AddNewCharacter />
+      <NewCharacter onAddCharacter={addCharacterHandler} />
       <CharacterList characters={characters} />
     </div>
   );
