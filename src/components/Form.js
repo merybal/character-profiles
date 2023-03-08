@@ -3,86 +3,82 @@ import React, { useState } from "react";
 import "./Form.css";
 
 const Form = (props) => {
-  const [enteredFirstName, setEnteredFirstName] = useState("");
-  const [enteredLastName, setEnteredLastName] = useState("");
-  const [enteredAge, setEnteredAge] = useState("");
+  const [enteredName, setEnteredName] = useState("");
+  const [enteredStatus, setEnteredStatus] = useState("");
+  const [enteredSpecies, setEnteredSpecies] = useState("");
 
   // const [userInput, setUserInput] = useState({
-  //   enteredFirstName: "",
-  //   enteredLastName: "",
-  //   enteredAge: "",
+  //   enteredName: "",
+  //   enteredStatus: "",
+  //   enteredSpecies: "",
   // });
-  const fistNameChangeHandler = (event) => {
-    setEnteredFirstName(event.target.value);
+  const nameChangeHandler = (event) => {
+    setEnteredName(event.target.value);
     // setUserInput({
     //   ...userInput,
     //   enteredTitle: event.target.value,
     // });
     // setUserInput((previousState) => {
-    //   return { ...previousState, enteredFirstName: event.target.value };
+    //   return { ...previousState, enteredName: event.target.value };
     // });
   };
 
-  const lastNameChangeHandler = (event) => {
-    setEnteredLastName(event.target.value);
+  const statusChangeHandler = (event) => {
+    setEnteredStatus(event.target.value);
     // setUserInput({
     //   ...userInput,
-    //   enteredLastName: event.target.value,
+    //   enteredStatus: event.target.value,
     // });
     // setUserInput((previousState) => {
-    //   return { ...previousState, enteredLastName: event.target.value };
+    //   return { ...previousState, enteredStatus: event.target.value };
     // });
   };
 
-  const ageChangeHandler = (event) => {
-    setEnteredAge(event.target.value);
+  const speciesChangeHandler = (event) => {
+    setEnteredSpecies(event.target.value);
     // setUserInput({
     //   ...userInput,
-    //   enteredAge: event.target.value,
+    //   enteredSpecies: event.target.value,
     // });
     // setUserInput((previousState) => {
-    //   return { ...previousState, enteredAge: event.target.value };
+    //   return { ...previousState, enteredSpecies: event.target.value };
     // });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     const characterData = {
-      firstName: enteredFirstName,
-      lastName: enteredLastName,
-      age: enteredAge,
+      name: enteredName,
+      status: enteredStatus,
+      species: enteredSpecies,
     };
 
     props.onSaveCharacterData(characterData);
-    setEnteredFirstName("");
-    setEnteredLastName("");
-    setEnteredAge("");
+    setEnteredName("");
+    setEnteredStatus("");
+    setEnteredSpecies("");
   };
 
   return (
     <form onSubmit={submitHandler}>
       <div>
-        <label>First Name: </label>
+        <label>Name: </label>
+        <input type="text" value={enteredName} onChange={nameChangeHandler} />
+      </div>
+      <div>
+        <label>Status: </label>
         <input
           type="text"
-          value={enteredFirstName}
-          onChange={fistNameChangeHandler}
+          value={enteredStatus}
+          onChange={statusChangeHandler}
         />
       </div>
       <div>
-        <label>Last Name: </label>
+        <label>Species: </label>
         <input
           type="text"
-          value={enteredLastName}
-          onChange={lastNameChangeHandler}
-        />
-      </div>
-      <div>
-        <label>Age: </label>
-        <input
-          type="number"
-          value={enteredFirstName}
-          onChange={ageChangeHandler}
+          value={enteredSpecies}
+          onChange={speciesChangeHandler}
         />
       </div>
       <div>

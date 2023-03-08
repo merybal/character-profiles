@@ -1,26 +1,46 @@
+import React, { useState } from "react";
+
 import CharacterList from "./components/CharacterList";
 import NewCharacter from "./components/NewCharacter";
 
 import "./App.css";
 
+const mockedCharacters = [
+  {
+    id: 1,
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+  },
+  {
+    id: 2,
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+  },
+];
+
 function App() {
-  const characters = [
-    {
-      id: 1,
-      firstName: "Rick",
-      lastName: "Sanchez",
-      age: "?",
-    },
-    {
-      id: 1,
-      firstName: "Morty",
-      lastName: "Smith",
-      age: "13",
-    },
-  ];
+  const [characters, setCharacters] = useState(mockedCharacters);
+  // const characters = [
+  //   {
+  //     id: 1,
+  //     firstName: "Rick",
+  //     lastName: "Sanchez",
+  //     age: "?",
+  //   },
+  //   {
+  //     id: 1,
+  //     firstName: "Morty",
+  //     lastName: "Smith",
+  //     age: "13",
+  //   },
+  // ];
 
   const addCharacterHandler = (character) => {
-    console.log("app", character);
+    setCharacters((previousCharacters) => {
+      return [character, ...previousCharacters];
+    });
   };
 
   return (

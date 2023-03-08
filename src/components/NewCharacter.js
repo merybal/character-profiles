@@ -8,7 +8,6 @@ const NewCharacter = (props) => {
       ...enteredCharacterData,
       id: Math.random().toString(),
     };
-    console.log(characterData);
     props.onAddCharacter(characterData);
   };
   return (

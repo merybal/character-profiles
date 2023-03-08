@@ -6,16 +6,14 @@ function CharacterList(props) {
     <div className="character-list">
       <h2 className="title">Character List</h2>
       <div className="list-container">
-        <Card
-          firstName={props.characters[0].firstName}
-          lastName={props.characters[0].lastName}
-          age={props.characters[0].age}
-        />
-        <Card
-          firstName={props.characters[1].firstName}
-          lastName={props.characters[1].lastName}
-          age={props.characters[1].age}
-        />
+        {props.characters.map((character) => (
+          <Card
+            key={character.id}
+            name={character.name}
+            status={character.status}
+            species={character.species}
+          />
+        ))}
       </div>
     </div>
   );
