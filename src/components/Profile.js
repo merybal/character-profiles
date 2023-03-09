@@ -1,5 +1,5 @@
 import "./Profile.css";
-//unused component FOR NOW
+//TODO unused component FOR NOW
 function Profile(props) {
   const clickHandler = () => {
     console.log("clicked");

@@ -18,6 +18,12 @@ const mockedCharacters = [
     status: "Alive",
     species: "Human",
   },
+  {
+    id: 3,
+    name: "Cynthia",
+    status: "Dead",
+    species: "Alien",
+  },
 ];
 
 function App() {

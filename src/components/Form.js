@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import "./Form.css";
 
+//TODO add validators
+
 const Form = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredStatus, setEnteredStatus] = useState("");
