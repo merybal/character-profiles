@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import CharacterList from "./components/CharacterList";
+import Characters from "./components/Characters";
 import NewCharacter from "./components/NewCharacter";
 
 import "./App.css";
@@ -28,20 +28,6 @@ const mockedCharacters = [
 
 function App() {
   const [characters, setCharacters] = useState(mockedCharacters);
-  // const characters = [
-  //   {
-  //     id: 1,
-  //     firstName: "Rick",
-  //     lastName: "Sanchez",
-  //     age: "?",
-  //   },
-  //   {
-  //     id: 1,
-  //     firstName: "Morty",
-  //     lastName: "Smith",
-  //     age: "13",
-  //   },
-  // ];
 
   const addCharacterHandler = (character) => {
     setCharacters((previousCharacters) => {
@@ -52,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <NewCharacter onAddCharacter={addCharacterHandler} />
-      <CharacterList characters={characters} />
+      <Characters characters={characters} />
     </div>
   );
 }
