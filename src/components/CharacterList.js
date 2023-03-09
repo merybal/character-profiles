@@ -10,7 +10,7 @@ const CharacterList = (props) => {
 
   return (
     <div className="character-list">
-      <div className="list-container">
+      <ul className="list-container">
         {props.characters().map((character) => (
           <Card
             key={character.id}
@@ -19,7 +19,7 @@ const CharacterList = (props) => {
             species={character.species}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

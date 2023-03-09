@@ -9,42 +9,16 @@ const Form = (props) => {
   const [enteredStatus, setEnteredStatus] = useState("");
   const [enteredSpecies, setEnteredSpecies] = useState("");
 
-  // const [userInput, setUserInput] = useState({
-  //   enteredName: "",
-  //   enteredStatus: "",
-  //   enteredSpecies: "",
-  // });
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredTitle: event.target.value,
-    // });
-    // setUserInput((previousState) => {
-    //   return { ...previousState, enteredName: event.target.value };
-    // });
   };
 
   const statusChangeHandler = (event) => {
     setEnteredStatus(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredStatus: event.target.value,
-    // });
-    // setUserInput((previousState) => {
-    //   return { ...previousState, enteredStatus: event.target.value };
-    // });
   };
 
   const speciesChangeHandler = (event) => {
     setEnteredSpecies(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredSpecies: event.target.value,
-    // });
-    // setUserInput((previousState) => {
-    //   return { ...previousState, enteredSpecies: event.target.value };
-    // });
   };
 
   const submitHandler = (event) => {
@@ -85,6 +59,9 @@ const Form = (props) => {
       </div>
       <div>
         <button type="submit">Add Character</button>
+        <button type="button" onClick={props.cancel}>
+          Cancel
+        </button>
       </div>
     </form>
   );

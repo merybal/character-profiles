@@ -19,7 +19,6 @@ const Characters = (props) => {
     });
   };
 
-  //TODO chequear si es correcto llamar a la funcion filteredCharacters en el return.
   return (
     <div className="character-list">
       <h2 className="title">Character List</h2>
