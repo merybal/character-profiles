@@ -1,6 +1,8 @@
 import React from "react";
 
-import Form from "./Form";
+import Form from "../Form/Form";
+
+import styles from "./NewCharacter.module.scss";
 
 const NewCharacter = (props) => {
   const [showForm, setShowForm] = React.useState(false);
@@ -32,7 +34,7 @@ const NewCharacter = (props) => {
   }
 
   return (
-    <div>
+    <div className={styles["new-character"]}>
       <button onClick={addButtonHandler}>Add New Character</button>
     </div>
   );

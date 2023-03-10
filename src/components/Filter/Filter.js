@@ -2,7 +2,7 @@ import React from "react";
 
 // import "./CharacterFilter.css";
 
-const CharacterFilter = (props) => {
+const Filter = (props) => {
   const dropdownChangeHandler = (event) => {
     props.onChangeFilter(event.target.value);
   };
@@ -21,4 +21,4 @@ const CharacterFilter = (props) => {
   );
 };
 
-export default CharacterFilter;
+export default Filter;

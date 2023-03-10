@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
-import Characters from "./components/Characters";
-import NewCharacter from "./components/NewCharacter";
+import Characters from "./components/Characters/Characters";
+import NewCharacter from "./components/NewCharacter/NewCharacter";
+import Logo from "./assets/RickAndMortyLogo.png";
 
-import "./App.css";
+import "./App.scss";
 
+//TODO implement API
+//scope component
 const mockedCharacters = [
   {
     id: 1,
@@ -36,7 +39,10 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
+      <div className="app-logo">
+        <img src={Logo} alt="logo" />
+      </div>
       <NewCharacter onAddCharacter={addCharacterHandler} />
       <Characters characters={characters} />
     </div>

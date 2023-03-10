@@ -1,7 +1,7 @@
-import "./CharacterList.css";
-import Card from "./Card";
+import "./List.css";
+import Card from "../Card/Card";
 
-const CharacterList = (props) => {
+const List = (props) => {
   //TODO chequear si es correcto llamar a la funcion filteredCharacters()/characters() aca.
 
   if (props.characters().length < 0) {
@@ -24,4 +24,4 @@ const CharacterList = (props) => {
   );
 };
 
-export default CharacterList;
+export default List;

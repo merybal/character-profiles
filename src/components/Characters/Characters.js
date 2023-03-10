@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "./CharacterList.css";
-import CharacterList from "./CharacterList";
-import CharacterFilter from "./CharacterFilter";
+import List from "../List/List";
+import Filter from "../Filter/Filter";
 
 const Characters = (props) => {
   const [filterStatus, setFilteredStatus] = useState("None");
@@ -22,12 +21,9 @@ const Characters = (props) => {
   return (
     <div className="character-list">
       <h2 className="title">Character List</h2>
-      <CharacterFilter
-        selected={filterStatus}
-        onChangeFilter={filterChangeHandler}
-      />
+      <Filter selected={filterStatus} onChangeFilter={filterChangeHandler} />
       <div className="list-container">
-        <CharacterList characters={filteredCharacters} />
+        <List characters={filteredCharacters} />
       </div>
     </div>
   );

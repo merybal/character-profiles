@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 
-import "./Form.css";
-
-//TODO add validators
+import styles from "./Form.module.scss";
 
 const Form = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredStatus, setEnteredStatus] = useState("");
   const [enteredSpecies, setEnteredSpecies] = useState("");
+  const [isValid, setIsValid] = useState(true);
 
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
+    if (enteredName.trim().length === 0) {
+      setIsValid(false);
+    } else {
+      setIsValid(true);
+    }
   };
 
   const statusChangeHandler = (event) => {
@@ -37,11 +41,16 @@ const Form = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div>
+      <div className={`${styles["form-input"]} ${!isValid && styles.invalid}`}>
         <label>Name: </label>
-        <input type="text" value={enteredName} onChange={nameChangeHandler} />
+        <input
+          // style={{ borderColor: !isValid ? "red" : "black" }}
+          type="text"
+          value={enteredName}
+          onChange={nameChangeHandler}
+        />
       </div>
-      <div>
+      <div className="form-input">
         <label>Status: </label>
         <input
           type="text"
@@ -49,7 +58,7 @@ const Form = (props) => {
           onChange={statusChangeHandler}
         />
       </div>
-      <div>
+      <div className="form-input">
         <label>Species: </label>
         <input
           type="text"

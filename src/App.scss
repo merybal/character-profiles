@@ -1,0 +1,23 @@
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: white;
+  .app-logo {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+    // object-fit: contain;
+
+    img {
+      max-width: 640px;
+      width: 100%;
+      
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .app {
+    margin: 0 20px;
+  }
+}
