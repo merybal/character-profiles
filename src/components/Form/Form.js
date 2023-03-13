@@ -40,8 +40,10 @@ const Form = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className={`${styles["form-input"]} ${!isValid && styles.invalid}`}>
+    <form onSubmit={submitHandler} className={styles["form"]}>
+      <div
+        className={`${styles["input-container"]} ${!isValid && styles.invalid}`}
+      >
         <label>Name: </label>
         <input
           // style={{ borderColor: !isValid ? "red" : "black" }}
@@ -50,7 +52,9 @@ const Form = (props) => {
           onChange={nameChangeHandler}
         />
       </div>
-      <div className="form-input">
+      <div
+        className={`${styles["input-container"]} ${!isValid && styles.invalid}`}
+      >
         <label>Status: </label>
         <input
           type="text"
@@ -58,7 +62,9 @@ const Form = (props) => {
           onChange={statusChangeHandler}
         />
       </div>
-      <div className="form-input">
+      <div
+        className={`${styles["input-container"]} ${!isValid && styles.invalid}`}
+      >
         <label>Species: </label>
         <input
           type="text"

@@ -1,0 +1,25 @@
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: white;
+
+  .banner {
+  }
+  // .app-logo {
+  //   display: flex;
+  //   margin-top: 30px;
+  //   margin-bottom: 20px;
+  //   justify-content: space-around;
+
+  //   img {
+  //     max-width: 480px;
+  //     width: 100%;
+  //   }
+  // }
+}
+
+@media (max-width: 1040px) {
+  .app {
+    margin: 0 20px;
+  }
+}

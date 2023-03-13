@@ -1,3 +1,33 @@
+@import "src/styles/base/_variables.scss";
+@import "src/styles/base/_base.scss";
+
+.form {
+  background-color: $dark1;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: $text;
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      height: 40px;
+      max-width: 300px;
+      border-radius: 6px;
+      border-style: none;
+      padding: 10px;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+}
+
 .form-input.invalid label {
   color: red;
 }

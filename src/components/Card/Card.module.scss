@@ -1,5 +1,8 @@
+@import 'src/styles/base/_variables.scss';
+@import 'src/styles/base/_base.scss';
+
 .character-card {
-  background-color: #303f46;
+  background-color: $dark1;
   color: white;
   height: 200px;
   width: 200px;

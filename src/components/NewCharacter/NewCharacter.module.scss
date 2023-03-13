@@ -1,8 +1,12 @@
-.new-character {
-    height: 60px;
-    background-color: #808080;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import "src/styles/base/_variables.scss";
+@import "src/styles/base/_base.scss";
+
+.add-button {
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
 }

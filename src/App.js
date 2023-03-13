@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-import Characters from "./components/Characters/Characters";
-import NewCharacter from "./components/NewCharacter/NewCharacter";
-import Logo from "./assets/RickAndMortyLogo.png";
+import Characters from "components/Characters/Characters";
+import NewCharacter from "components/NewCharacter/NewCharacter";
+// import Logo from "./assets/RickAndMortyLogo.png";
+import Banner from "assets/Banner.jpg";
 
-import "./App.scss";
+import styles from "./App.module.scss";
 
 //TODO implement API
 //scope component
@@ -39,10 +40,14 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <div className="app-logo">
+    <div className={styles["app"]}>
+      {/* <div className={styles["app-logo"]}>
         <img src={Logo} alt="logo" />
+      </div> */}
+      <div className={styles["banner"]}>
+        <img src={Banner} alt="banner" />
       </div>
+
       <NewCharacter onAddCharacter={addCharacterHandler} />
       <Characters characters={characters} />
     </div>

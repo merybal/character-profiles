@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import List from "../List/List";
 import Filter from "../Filter/Filter";
 
+import styles from "./Characters.module.scss";
+
 const Characters = (props) => {
   const [filterStatus, setFilteredStatus] = useState("None");
 
@@ -19,8 +21,8 @@ const Characters = (props) => {
   };
 
   return (
-    <div className="character-list">
-      <h2 className="title">Character List</h2>
+    <div>
+      <h2 className={styles["title"]}>Character List</h2>
       <Filter selected={filterStatus} onChangeFilter={filterChangeHandler} />
       <div className="list-container">
         <List characters={filteredCharacters} />

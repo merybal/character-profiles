@@ -1,8 +1,24 @@
-// @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import 'src/styles/base/_variables.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+body {
+    color: white;
+}
+
 h1, h2 {
-    // font-family: 'Indie Flower', cursive;
-    font-family: 'Fredoka One', cursive;
+    @include franklin-font;
+}
 
+p {
+    font-family: $text;
+}
+
+button {
+    height: 40px;
+    padding: 0 30px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500;
+    color: white;
+    background-color: blue;
+    @include franklin-font;
 }

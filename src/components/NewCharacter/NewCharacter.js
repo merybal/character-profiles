@@ -34,8 +34,8 @@ const NewCharacter = (props) => {
   }
 
   return (
-    <div className={styles["new-character"]}>
-      <button onClick={addButtonHandler}>Add New Character</button>
+    <div className={styles["add-button"]}>
+      <button onClick={addButtonHandler}>ADD NEW CHARACTER</button>
     </div>
   );
 };
