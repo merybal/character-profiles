@@ -1,11 +1,11 @@
-@import 'src/styles/base/_variables.scss';
-@import 'src/styles/base/_base.scss';
+@import "src/styles/base/_variables.scss";
+@import "src/styles/base/_base.scss";
 
 .character-card {
   background-color: $dark1;
   color: white;
-  height: 200px;
-  width: 200px;
+  height: 235px;
+  width: 235px;
   padding: 20px;
   border-radius: 8px;
   list-style: none;

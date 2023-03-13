@@ -13,7 +13,7 @@ const Filter = (props) => {
       <select value={props.selected} onChange={dropdownChangeHandler}>
         <option value="Alive">Alive</option>
         <option value="Dead">Dead</option>
-        <option value="None">None</option>
+        <option value="All">All</option>
       </select>
     </div>
   );

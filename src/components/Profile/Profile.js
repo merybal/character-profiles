@@ -1,9 +1,7 @@
 import "./Profile.css";
 //TODO unused component FOR NOW
 function Profile(props) {
-  const clickHandler = () => {
-    console.log("clicked");
-  };
+  const clickHandler = () => {};
 
   return (
     <div className="character-card">

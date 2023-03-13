@@ -3,10 +3,12 @@
 
 .filter-container {
   font-family: $text;
-  margin: 20px;
+  margin: 26px 0;
   display: flex;
   gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   select {
     height: 40px;
     border-radius: 6px;

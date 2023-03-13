@@ -28,6 +28,60 @@ const mockedCharacters = [
     status: "Dead",
     species: "Alien",
   },
+  {
+    id: 4,
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+  },
+  {
+    id: 5,
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+  },
+  {
+    id: 6,
+    name: "Cynthia",
+    status: "Dead",
+    species: "Alien",
+  },
+  {
+    id: 7,
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+  },
+  {
+    id: 8,
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+  },
+  {
+    id: 9,
+    name: "Cynthia",
+    status: "Dead",
+    species: "Alien",
+  },
+  {
+    id: 10,
+    name: "Rick Sanchez",
+    status: "Alive",
+    species: "Human",
+  },
+  {
+    id: 11,
+    name: "Morty Smith",
+    status: "Alive",
+    species: "Human",
+  },
+  // {
+  //   id: 12,
+  //   name: "Cynthia",
+  //   status: "Dead",
+  //   species: "Alien",
+  // },
 ];
 
 function App() {

@@ -1,5 +1,6 @@
-import "./List.css";
 import Card from "../Card/Card";
+
+import styles from "components/List/List.module.scss";
 
 const List = (props) => {
   //TODO chequear si es correcto llamar a la funcion filteredCharacters()/characters() aca.
@@ -9,18 +10,16 @@ const List = (props) => {
   }
 
   return (
-    <div className="character-list">
-      <ul className="list-container">
-        {props.characters().map((character) => (
-          <Card
-            key={character.id}
-            name={character.name}
-            status={character.status}
-            species={character.species}
-          />
-        ))}
-      </ul>
-    </div>
+    <ul className={styles["list-container"]}>
+      {props.characters().map((character) => (
+        <Card
+          key={character.id}
+          name={character.name}
+          status={character.status}
+          species={character.species}
+        />
+      ))}
+    </ul>
   );
 };
 
