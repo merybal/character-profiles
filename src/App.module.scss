@@ -1,25 +1,52 @@
+@import "src/styles/base/_variables.scss";
+@import "src/styles/base/_base.scss";
+
 .app {
-  max-width: 1000px;
-  margin: 0 auto;
   color: white;
 
-  .banner {
+  .banner-container {
+    position: relative;
+    max-height: 450px;
+    overflow: hidden;
+    img {
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+    }
+    .title-container {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      h1 {
+        font-size: 60px;
+        margin-bottom: 10px;
+        font-weight: 800;
+      }
+      h2 {
+        font-size: 30px;
+        font-weight: 600;
+      }
+    }
   }
-  // .app-logo {
-  //   display: flex;
-  //   margin-top: 30px;
-  //   margin-bottom: 20px;
-  //   justify-content: space-around;
 
-  //   img {
-  //     max-width: 480px;
-  //     width: 100%;
-  //   }
-  // }
+  .page {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 1040px) {
   .app {
+    .banner-container {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
+  .page {
     margin: 0 20px;
   }
 }

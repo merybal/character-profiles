@@ -41,15 +41,17 @@ function App() {
 
   return (
     <div className={styles["app"]}>
-      {/* <div className={styles["app-logo"]}>
-        <img src={Logo} alt="logo" />
-      </div> */}
-      <div className={styles["banner"]}>
+      <div className={styles["banner-container"]}>
         <img src={Banner} alt="banner" />
+        <div className={styles["title-container"]}>
+          <h1>Rick and Morty</h1>
+          <h2>Characters</h2>
+        </div>
       </div>
-
-      <NewCharacter onAddCharacter={addCharacterHandler} />
-      <Characters characters={characters} />
+      <div className={styles["page"]}>
+        <Characters characters={characters} />
+        <NewCharacter onAddCharacter={addCharacterHandler} />
+      </div>
     </div>
   );
 }

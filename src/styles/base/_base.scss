@@ -1,24 +1,28 @@
-@import 'src/styles/base/_variables.scss';
+@import "src/styles/base/_variables.scss";
 
 body {
-    color: white;
+  color: white;
 }
 
-h1, h2 {
-    @include franklin-font;
+h1,
+h2 {
+  font-family: $title;
 }
 
 p {
-    font-family: $text;
+  font-family: $text;
 }
 
 button {
-    height: 40px;
-    padding: 0 30px;
-    border-radius: 6px;
-    border: none;
-    font-weight: 500;
-    color: white;
-    background-color: blue;
-    @include franklin-font;
+  height: 40px;
+  padding: 0 30px;
+  border-radius: 6px;
+  font-family: $text;
+  border: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: white;
+  background-color: blue;
+  max-width: 230px;
+  width: 100%;
 }

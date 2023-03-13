@@ -1,7 +1,17 @@
-@import 'src/styles/base/_variables.scss';
-@import 'src/styles/base/_base.scss';
+@import "src/styles/base/_variables.scss";
+@import "src/styles/base/_base.scss";
 
-.title {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
+// .title-container {
+//   display: flex;
+//   width: 100%;
+//   justify-content: space-between;
+//   //   background-color: rgba(37, 23, 26, 0.8);
+//   padding: 20px;
+//   border-radius: 8px;
+//   //   margin-bottom: 30px;
+
+//   .title {
+//     font-size: 28px;
+//     margin-bottom: 20px;
+//   }
+// }

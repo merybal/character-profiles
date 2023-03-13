@@ -22,7 +22,6 @@ const Characters = (props) => {
 
   return (
     <div>
-      <h2 className={styles["title"]}>Character List</h2>
       <Filter selected={filterStatus} onChangeFilter={filterChangeHandler} />
       <div className="list-container">
         <List characters={filteredCharacters} />

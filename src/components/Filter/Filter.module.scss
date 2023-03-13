@@ -1,0 +1,21 @@
+@import "src/styles/base/_variables.scss";
+@import "src/styles/base/_base.scss";
+
+.filter-container {
+  font-family: $text;
+  margin: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  select {
+    height: 40px;
+    border-radius: 6px;
+    border-style: none;
+    padding: 10px;
+    max-width: 230px;
+    width: 100%;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

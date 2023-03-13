@@ -1,6 +1,6 @@
 import React from "react";
 
-// import "./CharacterFilter.css";
+import styles from "components/Filter/Filter.module.scss";
 
 const Filter = (props) => {
   const dropdownChangeHandler = (event) => {
@@ -8,15 +8,13 @@ const Filter = (props) => {
   };
 
   return (
-    <div>
-      <div>
-        <label>Filter status</label>
-        <select value={props.selected} onChange={dropdownChangeHandler}>
-          <option value="Alive">Alive</option>
-          <option value="Dead">Dead</option>
-          <option value="None">None</option>
-        </select>
-      </div>
+    <div className={styles["filter-container"]}>
+      <label>Filter by status</label>
+      <select value={props.selected} onChange={dropdownChangeHandler}>
+        <option value="Alive">Alive</option>
+        <option value="Dead">Dead</option>
+        <option value="None">None</option>
+      </select>
     </div>
   );
 };
