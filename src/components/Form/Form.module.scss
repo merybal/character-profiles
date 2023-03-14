@@ -35,10 +35,10 @@
     }
 
     input.invalid {
-      border: 2px solid $error;
+      outline: 2px solid $error;
     }
     select.invalid {
-      border: 2px solid $error;
+      outline: 2px solid $error;
     }
     label.invalid {
       color: $error;

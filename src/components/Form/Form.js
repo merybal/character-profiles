@@ -9,8 +9,7 @@ const Form = (props) => {
   const [isNameValid, setIsNameValid] = useState(true);
   const [isSpeciesValid, setIsSpeciesValid] = useState(true);
   const [isStatusValid, setIsStatusValid] = useState(true);
-
-  const [isFormValid, setIsFormValid] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(true);
 
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
@@ -49,19 +48,18 @@ const Form = (props) => {
       status: enteredStatus,
     };
 
-    // if (
-    //   characterData.name === "" ||
-    //   characterData.status === "" ||
-    //   characterData.status === ""
-    // ) {
-    //   setIsFormValid(false);
-    // } else {
-
-    props.onSaveCharacterData(characterData);
-    setEnteredName("");
-    setEnteredStatus("");
-    setEnteredSpecies("");
-    // }
+    if (
+      characterData.name.trim().length === 0 ||
+      characterData.status.trim().length === 0 ||
+      characterData.status.trim().length === 0
+    ) {
+      setIsFormValid(false);
+    } else {
+      props.onSaveCharacterData(characterData);
+      setEnteredName("");
+      setEnteredStatus("");
+      setEnteredSpecies("");
+    }
   };
 
   return (
@@ -76,6 +74,9 @@ const Form = (props) => {
           onChange={nameChangeHandler}
         />
       </div>
+      {!isNameValid && (
+        <p className={styles["error-message"]}>Please complete Name</p>
+      )}
       <div className={styles["input-container"]}>
         <label className={`${!isSpeciesValid && styles.invalid}`}>
           Species
@@ -87,6 +88,9 @@ const Form = (props) => {
           onChange={speciesChangeHandler}
         />
       </div>
+      {!isSpeciesValid && (
+        <p className={styles["error-message"]}>Please complete Species</p>
+      )}
       <div className={styles["input-container"]}>
         <label className={`${!isStatusValid && styles.invalid}`}>Status</label>
         <select
@@ -99,22 +103,16 @@ const Form = (props) => {
           <option value="Select">Select</option>
         </select>
       </div>
-      {/* <div className={styles["input-container"]}>
-        <label>Status:</label>
-        <input
-          type="text"
-          value={enteredStatus}
-          onChange={statusChangeHandler}
-        />
-      </div> */}
-
-      <p className={styles["error-message"]}>
-        Please complete the missing fields.
-      </p>
+      {!isStatusValid && (
+        <p className={styles["error-message"]}>Please select Status.</p>
+      )}
+      {!isFormValid && (
+        <p className={styles["error-message"]}>
+          Please complete missing fields
+        </p>
+      )}
       <div className={styles["button-container"]}>
-        <button type="submit" disabled={!isFormValid}>
-          ADD CHARACTER
-        </button>
+        <button type="submit">ADD CHARACTER</button>
         <button type="button" onClick={props.cancel}>
           CANCEL
         </button>
