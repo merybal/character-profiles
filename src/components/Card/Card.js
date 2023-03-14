@@ -4,8 +4,8 @@ function Card(props) {
   return (
     <li className={styles["character-card"]}>
       <h2 className="character-name">Name: {props.name}</h2>
-      <p>Status: {props.status}</p>
       <p>Species: {props.species}</p>
+      <p>Status: {props.status}</p>
 
       {/* <button onClick={clickHandler}>View Full Profile</button> */}
     </li>
