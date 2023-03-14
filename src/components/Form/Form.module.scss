@@ -9,13 +9,21 @@
   flex-direction: column;
   gap: 20px;
   font-family: $text;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
 
   .input-container {
     display: flex;
     flex-direction: column;
     gap: 10px;
 
-    input {
+    input,
+    select {
       height: 40px;
       max-width: 300px;
       border-radius: 6px;
@@ -25,13 +33,34 @@
         outline: none;
       }
     }
+
+    input.invalid {
+      border: 2px solid $error;
+    }
+    select.invalid {
+      border: 2px solid $error;
+    }
+    label.invalid {
+      color: $error;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .error-message {
+    color: $error;
   }
 }
 
-.form-input.invalid label {
-  color: red;
-}
+// .form-input.invalid label {
+//   color: red;
+// }
 
-.form-input.invalid input {
-  border-color: red;
-}
+// .form-input.invalid input {
+//   border-color: red;
+// }

@@ -6,76 +6,117 @@ const Form = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredStatus, setEnteredStatus] = useState("");
   const [enteredSpecies, setEnteredSpecies] = useState("");
-  const [isValid, setIsValid] = useState(true);
+  const [isNameValid, setIsNameValid] = useState(true);
+  const [isSpeciesValid, setIsSpeciesValid] = useState(true);
+  const [isStatusValid, setIsStatusValid] = useState(true);
+
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
-    if (enteredName.trim().length === 0) {
-      setIsValid(false);
+    if (event.target.value.trim().length === 0) {
+      setIsNameValid(false);
     } else {
-      setIsValid(true);
+      setIsNameValid(true);
+    }
+  };
+
+  const speciesChangeHandler = (event) => {
+    setEnteredSpecies(event.target.value);
+    if (event.target.value.trim().length === 0) {
+      setIsSpeciesValid(false);
+    } else {
+      setIsSpeciesValid(true);
     }
   };
 
   const statusChangeHandler = (event) => {
     setEnteredStatus(event.target.value);
-  };
-
-  const speciesChangeHandler = (event) => {
-    setEnteredSpecies(event.target.value);
+    console.log(event.target.value);
+    if (event.target.value === "Select") {
+      console.log("entro");
+      setIsStatusValid(false);
+    } else {
+      setIsStatusValid(true);
+    }
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     const characterData = {
       name: enteredName,
-      status: enteredStatus,
       species: enteredSpecies,
+      status: enteredStatus,
     };
+
+    // if (
+    //   characterData.name === "" ||
+    //   characterData.status === "" ||
+    //   characterData.status === ""
+    // ) {
+    //   setIsFormValid(false);
+    // } else {
 
     props.onSaveCharacterData(characterData);
     setEnteredName("");
     setEnteredStatus("");
     setEnteredSpecies("");
+    // }
   };
 
   return (
     <form onSubmit={submitHandler} className={styles["form"]}>
-      <div
-        className={`${styles["input-container"]} ${!isValid && styles.invalid}`}
-      >
-        <label>Name: </label>
+      <h2>Add new character</h2>
+      <div className={styles["input-container"]}>
+        <label className={`${!isNameValid && styles.invalid}`}>Name</label>
         <input
-          // style={{ borderColor: !isValid ? "red" : "black" }}
+          className={`${!isNameValid && styles.invalid}`}
           type="text"
           value={enteredName}
           onChange={nameChangeHandler}
         />
       </div>
-      <div
-        className={`${styles["input-container"]} ${!isValid && styles.invalid}`}
-      >
-        <label>Status: </label>
+      <div className={styles["input-container"]}>
+        <label className={`${!isSpeciesValid && styles.invalid}`}>
+          Species
+        </label>
         <input
-          type="text"
-          value={enteredStatus}
-          onChange={statusChangeHandler}
-        />
-      </div>
-      <div
-        className={`${styles["input-container"]} ${!isValid && styles.invalid}`}
-      >
-        <label>Species: </label>
-        <input
+          className={`${!isSpeciesValid && styles.invalid}`}
           type="text"
           value={enteredSpecies}
           onChange={speciesChangeHandler}
         />
       </div>
-      <div>
-        <button type="submit">Add Character</button>
+      <div className={styles["input-container"]}>
+        <label className={`${!isStatusValid && styles.invalid}`}>Status</label>
+        <select
+          defaultValue="Select"
+          onChange={statusChangeHandler}
+          className={`${!isStatusValid && styles.invalid}`}
+        >
+          <option value="Alive">Alive</option>
+          <option value="Dead">Dead</option>
+          <option value="Select">Select</option>
+        </select>
+      </div>
+      {/* <div className={styles["input-container"]}>
+        <label>Status:</label>
+        <input
+          type="text"
+          value={enteredStatus}
+          onChange={statusChangeHandler}
+        />
+      </div> */}
+
+      <p className={styles["error-message"]}>
+        Please complete the missing fields.
+      </p>
+      <div className={styles["button-container"]}>
+        <button type="submit" disabled={!isFormValid}>
+          ADD CHARACTER
+        </button>
         <button type="button" onClick={props.cancel}>
-          Cancel
+          CANCEL
         </button>
       </div>
     </form>
