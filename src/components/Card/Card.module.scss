@@ -3,10 +3,30 @@
 
 .character-card {
   background-color: $dark1;
-  color: white;
-  height: 235px;
+  height: 380px;
   width: 235px;
-  padding: 20px;
   border-radius: 8px;
   list-style: none;
+  .character-img {
+    height: 230px;
+    width: 235px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  .character-data {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 145px;
+    padding: 16px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 24px;
+    }
+  }
 }

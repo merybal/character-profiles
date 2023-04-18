@@ -17,6 +17,12 @@ const List = (props) => {
           name={character.name}
           status={character.status}
           species={character.species}
+          id={character.id}
+          type={character.type}
+          gender={character.gender}
+          image={character.image}
+          origin={character.origin}
+          url={character.url}
         />
       ))}
     </ul>

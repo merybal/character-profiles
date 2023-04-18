@@ -1,98 +1,30 @@
 import React, { useState, useCallback, useEffect } from "react";
 
 import Characters from "components/Characters/Characters";
-import NewCharacter from "components/NewCharacter/NewCharacter";
+// import NewCharacter from "components/NewCharacter/NewCharacter";
 import Banner from "assets/Banner.jpg";
 
 import styles from "./App.module.scss";
 
-//TODO implement API
-//scope component
-
-// 'https://rickandmortyapi.com/api/character'
-
-// const mockedCharacters = [
-//   {
-//     id: 1,
-//     name: "Rick Sanchez",
-//     status: "Alive",
-//     species: "Human",
-//   },
-//   {
-//     id: 2,
-//     name: "Morty Smith",
-//     status: "Alive",
-//     species: "Human",
-//   },
-//   {
-//     id: 3,
-//     name: "Cynthia",
-//     status: "Dead",
-//     species: "Alien",
-//   },
-//   {
-//     id: 4,
-//     name: "Rick Sanchez",
-//     status: "Alive",
-//     species: "Human",
-//   },
-//   {
-//     id: 5,
-//     name: "Morty Smith",
-//     status: "Alive",
-//     species: "Human",
-//   },
-//   {
-//     id: 6,
-//     name: "Cynthia",
-//     status: "Dead",
-//     species: "Alien",
-//   },
-//   {
-//     id: 7,
-//     name: "Rick Sanchez",
-//     status: "Alive",
-//     species: "Human",
-//   },
-//   {
-//     id: 8,
-//     name: "Morty Smith",
-//     status: "Alive",
-//     species: "Human",
-//   },
-//   {
-//     id: 9,
-//     name: "Cynthia",
-//     status: "Dead",
-//     species: "Alien",
-//   },
-//   {
-//     id: 10,
-//     name: "Rick Sanchez",
-//     status: "Alive",
-//     species: "Human",
-//   },
-//   {
-//     id: 11,
-//     name: "Morty Smith",
-//     status: "Alive",
-//     species: "Human",
-//   },
-// ];
-
 function App() {
   const [characters, setCharacters] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   // const [error, setError] = useState(null);
 
   const fetchCharacters = useCallback(async () => {
-    // setIsLoading(true) //TODO
+    setIsLoading(true);
     // setError(null) //TODO
 
     // try {
     const response = await fetch(
-      "https://rickandmortyapi.com/api/character/?page=19"
+      "https://rickandmortyapi.com/api/character/?page=1"
     );
+
+    // if (!response.ok) {
+    //   // response.status has the concrete response status code
+    //   throw new Error("Something went wrong!"); //response has an error message of its own, in case we want to use that instead
+    // }
+
     const data = await response.json();
     const characterData = data.results.map((character) => {
       return {
@@ -107,12 +39,13 @@ function App() {
         url: character.url,
       };
     });
+    // console.log(characterData);
     setCharacters(characterData);
     // console.log("characters", characters);
     // } catch (error) {
     //   setError(error.message);
     // }
-    // setIsLoading(false);
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -135,7 +68,7 @@ function App() {
         </div>
       </div>
       <div className={styles["page"]}>
-        <Characters characters={characters} />
+        {!isLoading && <Characters characters={characters} />}
         {/* <NewCharacter onAddCharacter={addCharacterHandler} /> */}
       </div>
     </div>
