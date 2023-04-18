@@ -1,8 +1,8 @@
 import React from "react";
 
-import Form from "../Form/Form";
+import Form from "components/Form/Form";
 
-import styles from "./NewCharacter.module.scss";
+import styles from "components/NewCharacter/NewCharacter.module.scss";
 
 const NewCharacter = (props) => {
   const [showForm, setShowForm] = React.useState(false);

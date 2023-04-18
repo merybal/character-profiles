@@ -1,4 +1,4 @@
-import styles from "./Card.module.scss";
+import styles from "components/Card/Card.module.scss";
 
 function Card(props) {
   return (

@@ -1,4 +1,4 @@
-import "./Profile.css";
+// import "./Profile.css";
 //TODO unused component FOR NOW
 function Profile(props) {
   const clickHandler = () => {};
