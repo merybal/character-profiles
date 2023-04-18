@@ -9,48 +9,62 @@ import styles from "./App.module.scss";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const fetchCharacters = useCallback(async () => {
     setIsLoading(true);
-    // setError(null) //TODO
+    setError(null);
 
-    // try {
-    const response = await fetch(
-      "https://rickandmortyapi.com/api/character/?page=1"
-    );
+    try {
+      const response = await fetch(
+        "https://rickandmortyapi.com/api/character/?page=1"
+      );
+      // const response = await fetch(
+      //   "https://rickandmortyapi.com/api/cher/?page=1"
+      // ); // to test loading and error messages
 
-    // if (!response.ok) {
-    //   // response.status has the concrete response status code
-    //   throw new Error("Something went wrong!"); //response has an error message of its own, in case we want to use that instead
-    // }
+      if (!response.ok) {
+        throw new Error("Something went wrong =(");
+      }
 
-    const data = await response.json();
-    const characterData = data.results.map((character) => {
-      return {
-        id: character.id,
-        name: character.name,
-        status: character.status,
-        species: character.species,
-        type: character.type,
-        gender: character.gender,
-        image: character.image,
-        origin: character.origin,
-        url: character.url,
-      };
-    });
-    // console.log(characterData);
-    setCharacters(characterData);
-    // console.log("characters", characters);
-    // } catch (error) {
-    //   setError(error.message);
-    // }
+      const data = await response.json();
+      const characterData = data.results.map((character) => {
+        return {
+          id: character.id,
+          name: character.name,
+          status: character.status,
+          species: character.species,
+          type: character.type,
+          gender: character.gender,
+          image: character.image,
+          origin: character.origin,
+          url: character.url,
+        };
+      });
+      setCharacters(characterData);
+    } catch (error) {
+      setError(error.message);
+    }
     setIsLoading(false);
   }, []);
 
   useEffect(() => {
     fetchCharacters();
   }, [fetchCharacters]);
+
+  let content = <p>No movies were found</p>;
+
+  if (characters.length > 0) {
+    content = <Characters characters={characters} />;
+  }
+
+  if (error) {
+    content = <p className={styles["status-message"]}>{error}</p>;
+  }
+
+  if (isLoading) {
+    content = <p className={styles["status-message"]}>Loading...</p>;
+  }
 
   // const addCharacterHandler = (character) => {
   //   setCharacters((previousCharacters) => {
@@ -68,7 +82,7 @@ function App() {
         </div>
       </div>
       <div className={styles["page"]}>
-        {!isLoading && <Characters characters={characters} />}
+        {content}
         {/* <NewCharacter onAddCharacter={addCharacterHandler} /> */}
       </div>
     </div>

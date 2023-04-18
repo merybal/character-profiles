@@ -3,8 +3,6 @@ import Card from "../Card/Card";
 import styles from "components/List/List.module.scss";
 
 const List = (props) => {
-  //TODO chequear si es correcto llamar a la funcion filteredCharacters()/characters() aca.
-
   if (props.characters().length < 0) {
     return <p>No characters found</p>;
   }
