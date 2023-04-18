@@ -31,9 +31,7 @@ const Form = (props) => {
 
   const statusChangeHandler = (event) => {
     setEnteredStatus(event.target.value);
-    console.log(event.target.value);
     if (event.target.value === "Select") {
-      console.log("entro");
       setIsStatusValid(false);
     } else {
       setIsStatusValid(true);
@@ -66,8 +64,14 @@ const Form = (props) => {
     <form onSubmit={submitHandler} className={styles["form"]}>
       <h2>Add new character</h2>
       <div className={styles["input-container"]}>
-        <label className={`${!isNameValid && styles.invalid}`}>Name</label>
+        <label
+          htmlFor="charactername"
+          className={`${!isNameValid && styles.invalid}`}
+        >
+          Name
+        </label>
         <input
+          id="charactername"
           className={`${!isNameValid && styles.invalid}`}
           type="text"
           value={enteredName}
@@ -78,10 +82,14 @@ const Form = (props) => {
         <p className={styles["error-message"]}>Please complete Name</p>
       )}
       <div className={styles["input-container"]}>
-        <label className={`${!isSpeciesValid && styles.invalid}`}>
+        <label
+          htmlFor="species"
+          className={`${!isSpeciesValid && styles.invalid}`}
+        >
           Species
         </label>
         <input
+          id="species"
           className={`${!isSpeciesValid && styles.invalid}`}
           type="text"
           value={enteredSpecies}
@@ -92,8 +100,14 @@ const Form = (props) => {
         <p className={styles["error-message"]}>Please complete Species</p>
       )}
       <div className={styles["input-container"]}>
-        <label className={`${!isStatusValid && styles.invalid}`}>Status</label>
+        <label
+          htmlFor="status"
+          className={`${!isStatusValid && styles.invalid}`}
+        >
+          Status
+        </label>
         <select
+          id="status"
           defaultValue="Select"
           onChange={statusChangeHandler}
           className={`${!isStatusValid && styles.invalid}`}

@@ -21,12 +21,12 @@ const Characters = (props) => {
   };
 
   return (
-    <div>
+    <>
       <Filter selected={filterStatus} onChangeFilter={filterChangeHandler} />
       <div className="list-container">
         <List characters={filteredCharacters} />
       </div>
-    </div>
+    </>
   );
 };
 
