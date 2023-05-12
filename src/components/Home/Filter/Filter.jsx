@@ -11,9 +11,9 @@ const Filter = (props) => {
     <div className={styles["filter-container"]}>
       <label>Filter by status</label>
       <select value={props.selected} onChange={dropdownChangeHandler}>
+        <option value="All">All</option>
         <option value="Alive">Alive</option>
         <option value="Dead">Dead</option>
-        <option value="All">All</option>
       </select>
     </div>
   );

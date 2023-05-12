@@ -113,9 +113,9 @@ const Form = (props) => {
           onChange={statusChangeHandler}
           className={`${!isStatusValid && styles.invalid}`}
         >
+          <option value="Select">Select</option>
           <option value="Alive">Alive</option>
           <option value="Dead">Dead</option>
-          <option value="Select">Select</option>
         </select>
       </div>
       {!isStatusValid && (

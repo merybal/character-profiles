@@ -1,0 +1,27 @@
+@import "styles/base/_variables.scss";
+@import "styles/base/_base.scss";
+
+.action-bar {
+  margin: 26px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0 30px;
+    border-radius: 6px;
+    font-family: $text;
+    text-decoration: none;
+    border: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: white;
+    background-color: blue;
+    max-width: 200px;
+    width: 100%;
+  }
+}

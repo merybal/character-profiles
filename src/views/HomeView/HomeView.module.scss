@@ -6,12 +6,13 @@
 
   .banner-container {
     position: relative;
-    max-height: 440px;
+    max-height: 400px;
     overflow: hidden;
     img {
       left: 0;
       object-fit: cover;
       width: 100%;
+      transform: translateY(-16%);
     }
     .title-container {
       position: absolute;

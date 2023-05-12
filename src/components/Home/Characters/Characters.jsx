@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 import List from "../List/List";
-// import Filter from "../Filter/Filter";
 import ActionBar from "components/Home/ActionBar/ActionBar";
-import NewCharacter from "views/AddCharacterView/AddCharacterView";
+// import NewCharacter from "views/AddCharacterView/AddCharacterView";
 
-import styles from "./Characters.module.scss";
+// import styles from "./Characters.module.scss";
 
 const Characters = (props) => {
   const [filterStatus, setFilteredStatus] = useState("All");
@@ -23,22 +22,21 @@ const Characters = (props) => {
     });
   };
 
-  const addCharacterHandler = (character) => {
-    console.log(character);
-    // setCharacters((previousCharacters) => {
-    //   return [character, ...previousCharacters];
-    // });
-  };
+  // const addCharacterHandler = (character) => {
+  //   console.log(character);
+  //   // setCharacters((previousCharacters) => {
+  //   //   return [character, ...previousCharacters];
+  //   // });
+  // };
 
   return (
     <>
       <div>
-        {/* <Filter selected={filterStatus} onChangeFilter={filterChangeHandler} /> */}
         <ActionBar
           onFilterSelection={filterChangeHandler}
           selected={filterStatus}
         />
-        <NewCharacter onAddCharacter={addCharacterHandler} />
+        {/* <NewCharacter onAddCharacter={addCharacterHandler} /> */}
       </div>
       <div className="list-container">
         <List characters={filteredCharacters} />

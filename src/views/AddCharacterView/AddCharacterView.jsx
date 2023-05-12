@@ -1,18 +1,11 @@
-import React from "react";
-
 import Form from "components/AddCharacter/Form/Form";
 
-import styles from "views/AddCharacterView/AddCharacterView.module.scss";
+//TODO este componente se elimina? o se le agrega algo para justificarlo
+// import styles from "views/AddCharacterView/AddCharacterView.module.scss";
 
 const AddCharacter = (props) => {
-  const [showForm, setShowForm] = React.useState(false);
-
-  const addButtonHandler = () => {
-    setShowForm(true);
-  };
-
   const stopEditingHandler = () => {
-    setShowForm(false);
+    //descarta los datos y vuelve a pagina anterior
   };
 
   const saveCharacterDataHandler = (enteredCharacterData) => {
@@ -21,22 +14,15 @@ const AddCharacter = (props) => {
       id: Math.random().toString(),
     };
     props.onAddCharacter(characterData);
-    setShowForm(false);
+    //agrega al array que ya tengo al principio o al final y vuelve
+    // a la home page
   };
 
-  if (showForm) {
-    return (
-      <Form
-        onSaveCharacterData={saveCharacterDataHandler}
-        cancel={stopEditingHandler}
-      />
-    );
-  }
-
   return (
-    <div className={styles["add-button"]}>
-      <button onClick={addButtonHandler}>ADD NEW CHARACTER</button>
-    </div>
+    <Form
+      onSaveCharacterData={saveCharacterDataHandler}
+      cancel={stopEditingHandler}
+    />
   );
 };
 
