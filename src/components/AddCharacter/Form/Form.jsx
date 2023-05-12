@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-import styles from "components/Form/Form.module.scss";
+import styles from "components/AddCharacter/Form/Form.module.scss";
 
+// TODO mirar video 205 seccion 16 y la solucion de la tarea 5 que viene despues para refactorizar esto.
 const Form = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredStatus, setEnteredStatus] = useState("");

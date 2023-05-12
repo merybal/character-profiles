@@ -1,6 +1,6 @@
-// import "./Profile.css";
+// import "./Profile.module.scss";
 //TODO unused component FOR NOW
-function Profile(props) {
+function ProfileView(props) {
   const clickHandler = () => {};
 
   return (
@@ -9,9 +9,9 @@ function Profile(props) {
         Name: {props.firstName} {props.lastName}
       </h2>
       <p>Age: {props.age}</p>
-      <button onClick={clickHandler}>View Full Profile</button>
+      {/* <button onClick={clickHandler}>View Full Profile</button> */}
     </div>
   );
 }
 
-export default Profile;
+export default ProfileView;

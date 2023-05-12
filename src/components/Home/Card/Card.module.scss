@@ -3,7 +3,7 @@
 
 .character-card {
   background-color: $dark1;
-  height: 380px;
+  height: 366px;
   width: 235px;
   border-radius: 8px;
   list-style: none;
@@ -19,7 +19,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 145px;
+    font-size: 14px;
+    height: 130px;
     padding: 16px;
 
     h2 {

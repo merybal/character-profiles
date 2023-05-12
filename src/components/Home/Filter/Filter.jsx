@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "components/Filter/Filter.module.scss";
+import styles from "components/Home/Filter/Filter.module.scss";
 
 const Filter = (props) => {
   const dropdownChangeHandler = (event) => {

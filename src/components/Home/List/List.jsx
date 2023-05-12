@@ -1,6 +1,6 @@
-import Card from "components/Card/Card";
+import Card from "components/Home/Card/Card";
 
-import styles from "components/List/List.module.scss";
+import styles from "components/Home/List/List.module.scss";
 
 const List = (props) => {
   if (props.characters().length < 0) {

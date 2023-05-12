@@ -1,10 +1,10 @@
 import React from "react";
 
-import Form from "components/Form/Form";
+import Form from "components/AddCharacter/Form/Form";
 
-import styles from "components/NewCharacter/NewCharacter.module.scss";
+import styles from "views/AddCharacterView/AddCharacterView.module.scss";
 
-const NewCharacter = (props) => {
+const AddCharacter = (props) => {
   const [showForm, setShowForm] = React.useState(false);
 
   const addButtonHandler = () => {
@@ -40,4 +40,4 @@ const NewCharacter = (props) => {
   );
 };
 
-export default NewCharacter;
+export default AddCharacter;
