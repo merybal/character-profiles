@@ -11,9 +11,7 @@ const ActionBar = (props) => {
 
   return (
     <div className={styles["action-bar"]}>
-      <Link to="/add-character" className={styles.button}>
-        + ADD NEW
-      </Link>
+      <Link to="/add-character">+ ADD NEW</Link>
       <Filter selected={props.selected} onChangeFilter={filterChangeHandler} />
     </div>
   );

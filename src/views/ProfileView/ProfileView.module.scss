@@ -1,0 +1,48 @@
+@import "styles/base/_variables.scss";
+@import "styles/base/_base.scss";
+
+.profile-view {
+  background-color: $dark1;
+  border-radius: 8px;
+  max-width: 1000px;
+  width: 100%;
+  height: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: $text;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .profile-container {
+    display: flex;
+    gap: 40px;
+
+    .profile-image {
+      height: 360px;
+      width: 360px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .profile-data {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      p {
+        margin-bottom: 6px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+    }
+  }
+}

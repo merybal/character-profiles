@@ -62,7 +62,7 @@ const Form = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler} className={styles["form"]}>
+    <form onSubmit={submitHandler} className={styles.form}>
       <h2>Add new character</h2>
       <div className={styles["input-container"]}>
         <label

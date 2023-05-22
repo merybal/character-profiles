@@ -14,13 +14,12 @@
     height: 50px;
     padding: 0 30px;
     border-radius: 6px;
-    font-family: $text;
     text-decoration: none;
     border: none;
     letter-spacing: 1px;
     font-weight: 600;
     color: white;
-    background-color: blue;
+    background-color: $button;
     max-width: 200px;
     width: 100%;
   }

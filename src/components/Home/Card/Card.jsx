@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "components/Home/Card/Card.module.scss";
 
 function Card(props) {
@@ -8,10 +10,9 @@ function Card(props) {
         <h2>{props.name}</h2>
         <p>Status: {props.status}</p>
         <p>Species: {props.species}</p>
-        <p>Gender: {props.gender}</p>
+        {/* <p>Gender: {props.gender}</p> */}
+        <Link to="/profile">Full Profile</Link>
       </div>
-
-      {/* <button onClick={clickHandler}>View Full Profile</button> */}
     </li>
   );
 }
