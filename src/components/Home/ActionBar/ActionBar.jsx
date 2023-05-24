@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import Filter from "components/Home/Filter/Filter";
 
@@ -11,7 +11,7 @@ const ActionBar = (props) => {
 
   return (
     <div className={styles["action-bar"]}>
-      <Link to="/add-character">+ ADD NEW</Link>
+      {/* <Link to="/add-character">+ ADD NEW</Link> //TODO not used. API lacks POST method */}
       <Filter selected={props.selected} onChangeFilter={filterChangeHandler} />
     </div>
   );

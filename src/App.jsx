@@ -7,7 +7,7 @@ import ProfileView from "views/ProfileView/ProfileView";
 const router = createBrowserRouter([
   { path: "/", element: <HomeView /> },
   { path: "/add-character", element: <AddCharacter /> },
-  { path: "/profile", element: <ProfileView /> },
+  { path: "/profile/:characterId", element: <ProfileView /> },
 ]);
 
 function App() {

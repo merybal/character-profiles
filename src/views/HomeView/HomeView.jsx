@@ -1,12 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
-// import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
-
-// import Home from "components/Home/Home";
-// import NewCharacter from "components/NewCharacter/NewCharacter";
-// import Profile from "components/Profile/Profile";
 
 import Characters from "components/Home/Characters/Characters";
-// import NewCharacter from "components/NewCharacter/NewCharacter";
 import Banner from "assets/Banner.jpg";
 
 import styles from "views/HomeView/HomeView.module.scss";

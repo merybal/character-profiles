@@ -10,8 +10,7 @@ function Card(props) {
         <h2>{props.name}</h2>
         <p>Status: {props.status}</p>
         <p>Species: {props.species}</p>
-        {/* <p>Gender: {props.gender}</p> */}
-        <Link to="/profile">Full Profile</Link>
+        <Link to={`/profile/${props.id}`}>Full Profile</Link>
       </div>
     </li>
   );

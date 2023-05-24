@@ -12,15 +12,15 @@ const List = (props) => {
       {props.characters().map((character) => (
         <Card
           key={character.id}
+          id={character.id}
           name={character.name}
           status={character.status}
           species={character.species}
-          id={character.id}
-          type={character.type}
-          gender={character.gender}
           image={character.image}
-          origin={character.origin}
-          url={character.url}
+          // type={character.type}
+          // gender={character.gender}
+          // origin={character.origin}
+          // url={character.url}
         />
       ))}
     </ul>

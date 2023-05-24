@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import styles from "components/AddCharacter/Form/Form.module.scss";
 
 // TODO mirar video 205 seccion 16 y la solucion de la tarea 5 que viene despues para refactorizar esto.
+//TODO not used. API lacks POST method
+
 const Form = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredStatus, setEnteredStatus] = useState("");

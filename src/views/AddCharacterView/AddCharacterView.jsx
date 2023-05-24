@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
+
 import Form from "components/AddCharacter/Form/Form";
 
 //TODO este componente se elimina? o se le agrega algo para justificarlo
 // import styles from "views/AddCharacterView/AddCharacterView.module.scss";
+//TODO not used. API lacks POST method
 
 const AddCharacter = (props) => {
   const stopEditingHandler = () => {
@@ -19,10 +22,15 @@ const AddCharacter = (props) => {
   };
 
   return (
-    <Form
-      onSaveCharacterData={saveCharacterDataHandler}
-      cancel={stopEditingHandler}
-    />
+    <div>
+      <Form
+        onSaveCharacterData={saveCharacterDataHandler}
+        cancel={stopEditingHandler}
+      />
+
+      {/* TODO add style */}
+      <Link to="..">Back</Link>
+    </div>
   );
 };
 
