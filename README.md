@@ -5,8 +5,8 @@ SPA developed for viewing character info of Rick and Morty Characters, using Rea
 ## Dependencies
 
 - React
+- React Router
 - [Node.js](https://nodejs.org/es/)
-  (TODO complete)
 
 ## API
 
