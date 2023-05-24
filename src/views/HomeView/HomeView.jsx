@@ -33,11 +33,7 @@ const HomeView = () => {
           name: character.name,
           status: character.status,
           species: character.species,
-          type: character.type,
-          gender: character.gender,
           image: character.image,
-          origin: character.origin,
-          url: character.url,
         };
       });
       setCharacters(characterData);

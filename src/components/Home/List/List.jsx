@@ -17,10 +17,6 @@ const List = (props) => {
           status={character.status}
           species={character.species}
           image={character.image}
-          // type={character.type}
-          // gender={character.gender}
-          // origin={character.origin}
-          // url={character.url}
         />
       ))}
     </ul>

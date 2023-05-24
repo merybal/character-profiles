@@ -7,20 +7,21 @@
   justify-content: space-between;
   align-items: center;
 
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    padding: 0 30px;
-    border-radius: 6px;
-    text-decoration: none;
-    border: none;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: white;
-    background-color: $button;
-    max-width: 200px;
-    width: 100%;
-  }
+  //TODO not used. API lacks POST method
+  // a {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   height: 50px;
+  //   padding: 0 30px;
+  //   border-radius: 6px;
+  //   text-decoration: none;
+  //   border: none;
+  //   letter-spacing: 1px;
+  //   font-weight: 600;
+  //   color: white;
+  //   background-color: $button;
+  //   max-width: 200px;
+  //   width: 100%;
+  // }
 }

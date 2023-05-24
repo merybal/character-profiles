@@ -2,9 +2,6 @@ import React, { useState } from "react";
 
 import List from "../List/List";
 import ActionBar from "components/Home/ActionBar/ActionBar";
-// import NewCharacter from "views/AddCharacterView/AddCharacterView";
-
-// import styles from "./Characters.module.scss";
 
 const Characters = (props) => {
   const [filterStatus, setFilteredStatus] = useState("All");
@@ -22,13 +19,6 @@ const Characters = (props) => {
     });
   };
 
-  // const addCharacterHandler = (character) => {
-  //   console.log(character);
-  //   // setCharacters((previousCharacters) => {
-  //   //   return [character, ...previousCharacters];
-  //   // });
-  // };
-
   return (
     <>
       <div>
@@ -36,7 +26,6 @@ const Characters = (props) => {
           onFilterSelection={filterChangeHandler}
           selected={filterStatus}
         />
-        {/* <NewCharacter onAddCharacter={addCharacterHandler} /> */}
       </div>
       <div className="list-container">
         <List characters={filteredCharacters} />

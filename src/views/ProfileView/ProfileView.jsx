@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
-import { ReactComponent as Arrow } from "assets/Arrow1.svg";
+import { ReactComponent as Arrow } from "assets/Arrow.svg";
 
 import styles from "views/ProfileView/ProfileView.module.scss";
 
